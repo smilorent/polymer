@@ -1,0 +1,143 @@
+% ---------------------------------------------
+% Polymer - a LaTeX-based résumé template
+% Authors: Silviu Lorenț, Jake Gutierrez
+% Source: https://github.com/jakegut/resume
+% License: MIT (see LICENSE.md)
+% ---------------------------------------------
+
+% Document class and required packages
+\documentclass[a4paper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\input{glyphtounicode}
+
+% Page layout settings
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+% URL style setting
+\urlstyle{same}
+
+% Text alignment and spacing settings
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Title formatting for sections
+\titleformat{\section}[runin]
+{\scshape\raggedright\large}{}{0em}{}[\color{black}\hspace{2.5pt}\titlerule \vspace{-5pt}]
+
+% Enable proper Unicode encoding in the generated PDF
+% This allows the CV to be properly parsed by applicant tracking systems
+\pdfgentounicode=1
+
+% Custom commands for headings
+\newcommand{\resumeSubheading}[4]{%
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{%
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2
+\end{tabular*}\vspace{-7pt}
+}
+
+% Custom command for highlights
+\newcommand{\resumeHighlight}[1]{%
+    \par\vspace{7pt}%
+    {\small{\textbf{Highlight:} #1}}%
+    \vspace{-4pt}%
+}
+
+% Custom commands for list items
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Use bullets instead of dashes for list items
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% Document content begins
+\begin{document}
+
+% Header section
+\begin{center}
+    \textbf{\Huge \scshape Silviu Lorenț} \\ \vspace{1pt}
+    % \small (+xx) xxx xxx xxx $|$ 
+    \href{mailto:silviu@lorent.ro}{\uline{silviu@lorent.ro}} $|$
+    \href{https://linkedin.com/in/silviu-lorent}{\uline{linkedin.com/in/silviu-lorent}} $|$
+    \href{https://github.com/smilorent}{\uline{github.com/smilorent}}
+\end{center}
+
+% Experience section
+\section{Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Data Engineer}{Jul. 2021 -- Sep. 2023}
+            {IBM Consulting}{Bucharest, Romania}
+            \resumeHighlight{Led a team that won the local IBM watsonx Challenge in Aug. 2023 with a \emph{GenAI (Generative AI)} centered \emph{customer service} solution using \textbf{Python}, \textbf{ChromaDB} and \emph{prompt engineering} techniques, achieving ROUGE-1 and ROUGE-L F1-scores $\geq$ 0.7 in evaluation against a reference set of questions and answers.}
+            \resumeItemListStart
+                \resumeItem{Designed and implemented \emph{ETL (Extract, Transform, Load)} data pipelines using \textbf{Informatica PowerCenter}.}
+                \resumeItem{Collaborated on modularizing \emph{IaC (Infrastructure as Code)} in \textbf{HCL} orchestrated by \textbf{HashiCorp Terraform}.}
+                \resumeItem{Engineered solutions to improve developer \emph{QoL (Quality of Life)} using \textbf{Python} and \textbf{Jupyter Notebook}.}
+                \resumeItem{Supported the \emph{server migration} of applications by automating checks and transfers using \textbf{GNU Bash}.}
+                \resumeItem{Created \emph{technical documentation}, including templates, in the \textbf{Confluence} platform using \textbf{Markdown}.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% Education section
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Bachelor's Degree, Systems Engineering}{Oct. 2017 -- Jul. 2021}
+            {Technical University of Civil Engineering Bucharest}{Bucharest, Romania}
+            \resumeHighlight{Graduated as valedictorian of the Class of 2021.}
+            \resumeItemListStart
+                \resumeItem{Majored in \emph{Applied Computer Science} (240 ECTS)}
+                \resumeItem{Minored in \emph{Discipline-Specific Pedagogy}, 1\textsuperscript{st} Level (30 ECTS)}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% Technical skills section
+\section{Technical Skills}
+    \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]
+        \small{
+            \item{\textbf{General-Purpose:} Python}
+            \item{\textbf{Domain-Specific:} ANSI SQL, GNU Bash}
+            \item{\textbf{Structure and Styling:} \LaTeX, Markdown}
+        }
+    \end{itemize}
+
+% Communication skills section
+\section{Communication Skills}
+    \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]
+        \small{
+            \item{\textbf{Romanian:} native}
+            \item{\textbf{English:} CEFR C2 (listening, reading, speaking, writing)}
+            \item{\textbf{Spanish:} CEFR B1 (reading), A2 (listening, speaking, writing)}
+        }
+    \end{itemize}
+
+% Document ends
+\end{document}
