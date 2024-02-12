@@ -1,4 +1,4 @@
-# `smilorent/polymer`
+# Polymer
 
 _Polymer_ is a résumé template written in LaTeX, optimized for applicant tracking systems common in HR departments. It is based on the work of [Jake Gutierrez](https://github.com/jakegut/resume).
 
